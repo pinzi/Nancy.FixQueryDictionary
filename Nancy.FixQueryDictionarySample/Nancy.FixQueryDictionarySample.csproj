@@ -38,8 +38,8 @@
     <Reference Include="Nancy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.1.0.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.FixQueryDictionary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Nancy.FixQueryDictionary.1.0.0\lib\Nancy.FixQueryDictionary.dll</HintPath>
+    <Reference Include="Nancy.FixQueryDictionary, Version=1.0.0.2, Culture=neutral, PublicKeyToken=328f65d9cff65cd2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.FixQueryDictionary.1.0.2\lib\Nancy.FixQueryDictionary.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Hosting.Self, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.Hosting.Self.1.0.0\lib\net40\Nancy.Hosting.Self.dll</HintPath>
@@ -70,6 +70,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
