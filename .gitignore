@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/NugetPublish/Nancy.FixQueryDictionary.1.0.5.nuspec
+/NugetPublish/Apikey.txt
