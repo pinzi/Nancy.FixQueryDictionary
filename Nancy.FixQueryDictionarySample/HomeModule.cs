@@ -1,4 +1,5 @@
-﻿using Nancy.ModelBinding;
+﻿using Nancy.FixQueryDictionary;
+using Nancy.ModelBinding;
 
 namespace Nancy.FixQueryDictionarySample
 {
@@ -28,7 +29,7 @@ namespace Nancy.FixQueryDictionarySample
         /// <returns></returns>
         private Response BeforeRequest(NancyContext ctx)
         {
-            //ctx.FixQueryDictionary();
+            ctx.FixQueryDictionary();
             //TODO:
 
             return ctx.Response;
