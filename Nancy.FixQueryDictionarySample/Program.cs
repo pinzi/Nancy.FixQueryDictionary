@@ -17,7 +17,7 @@ namespace Nancy.FixQueryDictionarySample
               });
               x.RunAsLocalSystem();
               x.SetDescription("Nancy SelfHost Demo");
-              x.SetDisplayName("support by TopSelf");
+              x.SetDisplayName("Support by TopSelf");
               x.SetServiceName("Nancy SelfHost");
           });
 
