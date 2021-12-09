@@ -1,0 +1,2 @@
+# Nancy.FixQueryDictionary
+一个用来修复Nancy Http请求参数绑定时空参数绑定出错的nuget包
