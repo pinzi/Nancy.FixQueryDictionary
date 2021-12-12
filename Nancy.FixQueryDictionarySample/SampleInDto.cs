@@ -18,14 +18,14 @@ namespace Nancy.FixQueryDictionarySample
         /// <summary>
         /// 
         /// </summary>
-        public string Area { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime? startTime { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime? endTime { get; set; }
+        public string Age { get; set; }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public DateTime? startTime { get; set; }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public DateTime? endTime { get; set; }
     }
 }

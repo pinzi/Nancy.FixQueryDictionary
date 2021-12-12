@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.FixQueryDictionary", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.FixQueryDictionarySample", "Nancy.FixQueryDictionarySample\Nancy.FixQueryDictionarySample.csproj", "{8FC68DA0-88ED-4A25-AC11-0F620929F7B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{314017CC-C958-4CC0-A979-465624430C87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.FixQueryDictionaryTest", "Nancy.FixQueryDictionaryTest\Nancy.FixQueryDictionaryTest.csproj", "{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{8FC68DA0-88ED-4A25-AC11-0F620929F7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FC68DA0-88ED-4A25-AC11-0F620929F7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FC68DA0-88ED-4A25-AC11-0F620929F7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AB7A1E88-6BFF-407F-B990-513E0DB87F85} = {F2BBABC3-2EEE-4EC2-9F12-A5CF1C335891}
 		{8FC68DA0-88ED-4A25-AC11-0F620929F7B8} = {D91120DC-BB3F-40ED-A5F9-5F8C9B43612C}
+		{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A} = {314017CC-C958-4CC0-A979-465624430C87}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63A36C69-EC01-4307-869A-84D029BA8E4E}

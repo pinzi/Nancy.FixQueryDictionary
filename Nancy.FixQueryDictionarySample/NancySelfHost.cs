@@ -16,10 +16,10 @@ namespace Nancy.FixQueryDictionarySample
         /// </summary>
         public void Start()
         {
-            const string uriStr = "http://localhost:9090";
+            const string uriStr = "http://localhost:8080";
             _nancyHost = new NancyHost(new Uri(uriStr));
             _nancyHost.Start();
-            Process.Start("explorer.exe", "http://localhost:9090");
+            Process.Start("explorer.exe", uriStr);
             Console.WriteLine(" 服务已启动： " + uriStr);
         }
         /// <summary>

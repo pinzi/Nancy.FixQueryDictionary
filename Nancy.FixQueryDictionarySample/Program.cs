@@ -20,18 +20,6 @@ namespace Nancy.FixQueryDictionarySample
               x.SetDisplayName("Support by TopSelf");
               x.SetServiceName("Nancy SelfHost");
           });
-
-            //var url = new Url("http://127.0.0.1:9090");
-            //var hostConfig = new HostConfiguration()
-            //{
-            //    UrlReservations = new UrlReservations { CreateAutomatically = true }
-            //};
-            //using (var host = new NancyHost(hostConfig, url))
-            //{
-            //    host.Start();
-            //    Console.WriteLine("Your application is running on " + url);
-            //}
-            //Process.Start("explorer.exe", "http://localhost:9090");
             Console.ReadKey();
         }
     }

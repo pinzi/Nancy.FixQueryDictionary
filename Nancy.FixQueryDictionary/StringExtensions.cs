@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
+using HttpUtility = Nancy.Helpers.HttpUtility;
 
 namespace Nancy.FixQueryDictionary
 {
@@ -22,15 +23,15 @@ namespace Nancy.FixQueryDictionary
             {
                 return ctx;
             }
-            ctx.Request.Query = ctx.Request.Url.Query.AsQueryDictionaryFix();
+            ctx.Request.Query = ctx.Request.Url.Query.AsQueryDictionary();
             return ctx;
         }
         /// <summary>
-        /// 获取修复后的url参数字典
+        /// 
         /// </summary>
         /// <param name="queryString"></param>
         /// <returns></returns>
-        public static DynamicDictionary AsQueryDictionaryFix(this string queryString)
+        public static DynamicDictionary AsQueryDictionary(this string queryString)
         {
             var coll = ParseQueryString(queryString);
             var ret = new DynamicDictionary();
@@ -95,21 +96,18 @@ namespace Nancy.FixQueryDictionary
                 query = query.Substring(1);
 
             NameValueCollection result = new NameValueCollection(StringComparer.Ordinal);
-            ParseQueryString(query, encoding, result);
+            ParseQueryStringFix(query, encoding, result);
             return result;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="query"></param>
-        /// <param name="encoding"></param>
-        /// <param name="result"></param>
+
+        #region 原方法
         internal static void ParseQueryString(string query, Encoding encoding, NameValueCollection result)
         {
             if (query.Length == 0)
                 return;
 
-            var decoded = Nancy.Helpers.HttpUtility.HtmlDecode(query);
+            var decoded = HttpUtility.HtmlDecode(query);
+
             var segments = decoded.Split(new[] { '&' }, StringSplitOptions.None);
 
             foreach (var segment in segments)
@@ -119,12 +117,7 @@ namespace Nancy.FixQueryDictionary
                     result.Add(keyValuePair.Key, keyValuePair.Value);
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="segment"></param>
-        /// <param name="encoding"></param>
-        /// <returns></returns>
+
         private static KeyValuePair<string, string> ParseQueryStringSegment(string segment, Encoding encoding)
         {
             if (String.IsNullOrWhiteSpace(segment))
@@ -133,19 +126,59 @@ namespace Nancy.FixQueryDictionary
             var indexOfEquals = segment.IndexOf('=');
             if (indexOfEquals == -1)
             {
-                segment = Nancy.Helpers.HttpUtility.UrlDecode(segment, encoding);
+                var decoded = HttpUtility.UrlDecode(segment, encoding);
+                return new KeyValuePair<string, string>(decoded, decoded);
+            }
+
+            var key = HttpUtility.UrlDecode(segment.Substring(0, indexOfEquals), encoding);
+            var length = (segment.Length - indexOfEquals) - 1;
+            var value = HttpUtility.UrlDecode(segment.Substring(indexOfEquals + 1, length), encoding);
+            return new KeyValuePair<string, string>(key, value);
+        }
+        #endregion
+
+        #region 修复方法
+        internal static void ParseQueryStringFix(string query, Encoding encoding, NameValueCollection result)
+        {
+            if (query.Length == 0)
+                return;
+
+            var decoded = HttpUtility.HtmlDecode(query);
+            if (decoded.IndexOf('&') == -1)
+            {
+                decoded = HttpUtility.UrlDecode(decoded, encoding);
+            }
+            var segments = decoded.Split(new[] { '&' }, StringSplitOptions.None);
+
+            foreach (var segment in segments)
+            {
+                var keyValuePair = ParseQueryStringSegmentFix(segment, encoding);
+                if (!Equals(keyValuePair, default(KeyValuePair<string, string>)))
+                    result.Add(keyValuePair.Key, keyValuePair.Value);
+            }
+        }
+
+        private static KeyValuePair<string, string> ParseQueryStringSegmentFix(string segment, Encoding encoding)
+        {
+            if (String.IsNullOrWhiteSpace(segment))
+                return default(KeyValuePair<string, string>);
+
+            var indexOfEquals = segment.IndexOf('=');
+            if (indexOfEquals == -1)
+            {
+                segment = HttpUtility.UrlDecode(segment, encoding);
                 indexOfEquals = segment.IndexOf('=');
                 if (indexOfEquals == -1)
                 {
                     return new KeyValuePair<string, string>(segment, "");
                 }
             }
-
-            var key = Nancy.Helpers.HttpUtility.UrlDecode(segment.Substring(0, indexOfEquals), encoding);
+            var key = HttpUtility.UrlDecode(segment.Substring(0, indexOfEquals), encoding);
             var length = (segment.Length - indexOfEquals) - 1;
-            var value = Nancy.Helpers.HttpUtility.UrlDecode(segment.Substring(indexOfEquals + 1, length), encoding);
+            var value = HttpUtility.UrlDecode(segment.Substring(indexOfEquals + 1, length), encoding);
             var res = new KeyValuePair<string, string>(key, value);
             return res;
         }
+        #endregion
     }
 }
