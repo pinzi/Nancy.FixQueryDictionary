@@ -32,9 +32,9 @@
             <param name="ctx">NancyContext对象</param>
             <returns>NancyContext对象</returns>
         </member>
-        <member name="M:Nancy.FixQueryDictionary.NancyFixQueryDictionaryExtensions.AsQueryDictionaryFix(System.String)">
+        <member name="M:Nancy.FixQueryDictionary.NancyFixQueryDictionaryExtensions.AsQueryDictionary(System.String)">
             <summary>
-            获取修复后的url参数字典
+            
             </summary>
             <param name="queryString"></param>
             <returns></returns>
@@ -71,22 +71,6 @@
             <param name="caseSensitive"></param>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Nancy.FixQueryDictionary.NancyFixQueryDictionaryExtensions.ParseQueryString(System.String,System.Text.Encoding,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            
-            </summary>
-            <param name="query"></param>
-            <param name="encoding"></param>
-            <param name="result"></param>
-        </member>
-        <member name="M:Nancy.FixQueryDictionary.NancyFixQueryDictionaryExtensions.ParseQueryStringSegment(System.String,System.Text.Encoding)">
-            <summary>
-            
-            </summary>
-            <param name="segment"></param>
-            <param name="encoding"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>
