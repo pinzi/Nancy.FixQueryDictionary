@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayCache.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ConfigurationException.cs" />
     <Compile Include="DynamicDictionary.cs" />
     <Compile Include="DynamicDictionaryValue.cs" />
