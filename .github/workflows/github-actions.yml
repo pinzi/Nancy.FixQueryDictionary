@@ -40,6 +40,8 @@ jobs:
           PROJECT_FILE_PATH: NugetPublish/Release/Nancy.FixQueryDictionary.nuspec
           # nuget package 名称
           PACKAGE_NAME: Nancy.FixQueryDictionary
+          # 匹配nuget package版本号正则表达式
+          VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
           # nuget package 发布apikey
-          NUGET_KEY: ${{secrets.nuget_ApiKey}}
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
       - run: echo "🍏 此作业的状态为${{job.status}}"
