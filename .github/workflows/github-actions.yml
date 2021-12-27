@@ -44,4 +44,4 @@ jobs:
           VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
           # nuget package 发布apikey
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-      - run: echo "🍏 此作业的状态为${{job.status}}"
+      - run: echo "此作业的状态为${{job.status}}"
