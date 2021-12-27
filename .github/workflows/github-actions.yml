@@ -23,10 +23,13 @@ jobs:
             nuget-version: '5.x'
       - name: 打包nuget package
         run: |
-             nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec            
+             nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec 
+      - name: 添加github源
+        run: |
+            dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
       - name: 发布到github
         run: |
-            nuget push NugetPublish/Release/*.nupkg -Source github -SkipDuplicate
+            dotnet nuget push "NugetPublish/Release/Nancy.FixQueryDictionary.1.1.0.nupkg"  --api-key ${{secrets.nuget_ApiKey}} --source "github"
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
