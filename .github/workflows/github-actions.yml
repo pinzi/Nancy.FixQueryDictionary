@@ -14,9 +14,9 @@ jobs:
       - name: 列出存储库中的文件
         run: |
           ls ${{ github.workspace }}
-      - name: 列出存储库中的文件
+      - name: 列出Release发布的文件
         run: |
-          ls NugetPublish
+          ls NugetPublish/Release
       - name: 安装nuget 
         uses: nuget/setup-nuget@v1
         with:        
@@ -26,7 +26,7 @@ jobs:
              nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec            
       - name: 发布到github
         run: |
-            nuget push ./NugetPublish/Release/*.nupkg -Source github -SkipDuplicate
+            nuget push NugetPublish/Release/*.nupkg -Source github -SkipDuplicate
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
