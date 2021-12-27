@@ -10,7 +10,7 @@ jobs:
       - name: 签出存储库代码
         uses: actions/checkout@v2
       - run: echo "${{github.repository}}存储库已克隆到运行程序"
-      - run: echo "🖥工作流现在可以在运行程序上测试代码了"
+      - run: echo "工作流现在可以在运行程序上测试代码了"
       - name: 列出存储库中的文件
         run: |
           ls ${{ github.workspace }}
