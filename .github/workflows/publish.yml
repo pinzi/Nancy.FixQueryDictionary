@@ -26,7 +26,7 @@ jobs:
             nuget-version: '5.x'
       - name: 打包nuget package
         run: |
-             nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
+             nuget pack NugetPublish/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
       - name: 添加github源
         run: |
             dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
@@ -37,7 +37,7 @@ jobs:
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
           # 打包文件路径
-          PROJECT_FILE_PATH: NugetPublish/Release/Nancy.FixQueryDictionary.nuspec
+          PROJECT_FILE_PATH: NugetPublish/Nancy.FixQueryDictionary.nuspec
           # nuget package 名称
           PACKAGE_NAME: Nancy.FixQueryDictionary
           # 匹配nuget package版本号正则表达式
