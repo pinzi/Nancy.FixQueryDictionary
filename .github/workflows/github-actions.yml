@@ -24,6 +24,9 @@ jobs:
       - name: 打包nuget package
         run: |
              nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
+      - name: 显示打包完成后的nupkg文件
+        run: |
+          ls NugetPublish/Release
       - name: 添加github源
         run: |
             dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
