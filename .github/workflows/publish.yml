@@ -1,5 +1,9 @@
 name: GitHub Actions
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -21,18 +25,20 @@ jobs:
         uses: nuget/setup-nuget@v1
         with:        
             nuget-version: '5.x'
+      - run: echo "正在生成nuget package..."
       - name: 打包nuget package
         run: |
              nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
-      - name: 显示打包完成后的nupkg文件
-        run: |
-          ls NugetPublish/Release
+      - run: echo "nuget package已生成"
       - name: 添加github源
         run: |
-            dotnet nuget add source --username pinzi --password ${{ secrets.nuget_ApiKey }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/OWNER/index.json"
+            dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
+      - run: echo "正在发布nuget package到GitHub"
       - name: 发布到github
         run: |
-            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
+            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.NUGET_APIKEY }} --source "github" --skip-duplicate
+      - run: echo "nuget package发布到GitHub已完成"
+      - run: echo "正在发布nuget package到Nuget"
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
@@ -44,4 +50,5 @@ jobs:
           VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
           # nuget package 发布apikey
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      - run: echo "发布nuget package到Nuget已完成"
       - run: echo "此作业的状态为${{job.status}}"
