@@ -25,20 +25,15 @@ jobs:
         uses: nuget/setup-nuget@v1
         with:        
             nuget-version: '5.x'
-      - run: echo "正在生成nuget package..."
       - name: 打包nuget package
         run: |
              nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
-      - run: echo "nuget package已生成"
       - name: 添加github源
         run: |
             dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
-      - run: echo "正在发布nuget package到GitHub"
       - name: 发布到github
         run: |
             dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
-      - run: echo "nuget package发布到GitHub已完成"
-      - run: echo "正在发布nuget package到Nuget"
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
