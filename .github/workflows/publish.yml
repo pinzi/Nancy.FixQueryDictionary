@@ -34,14 +34,16 @@ jobs:
         run: |
             dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
       - name: 发布到NuGet
-        uses: brandedoutcast/publish-nuget@v2.5.5
-        with:
-          # 打包文件路径
-          PROJECT_FILE_PATH: NugetPublish/Nancy.FixQueryDictionary.nuspec
-          # nuget package 名称
-          PACKAGE_NAME: Nancy.FixQueryDictionary
-          # 匹配nuget package版本号正则表达式
-          VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
-          # nuget package 发布apikey
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        #uses: brandedoutcast/publish-nuget@v2.5.5
+        #with:
+        #  # 打包文件路径
+        #  PROJECT_FILE_PATH: NugetPublish/Nancy.FixQueryDictionary.nuspec
+        #  # nuget package 名称
+        #  PACKAGE_NAME: Nancy.FixQueryDictionary
+        #  # 匹配nuget package版本号正则表达式
+        #  VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
+        #  # nuget package 发布apikey
+        #  NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        run: |
+             dotnet nuget push Nancy.FixQueryDictionary.1.1.0.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
       - run: echo "此作业的状态为${{job.status}}"
