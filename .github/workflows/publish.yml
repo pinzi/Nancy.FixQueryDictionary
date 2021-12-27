@@ -36,7 +36,7 @@ jobs:
       - run: echo "正在发布nuget package到GitHub"
       - name: 发布到github
         run: |
-            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.NUGET_APIKEY }} --source "github" --skip-duplicate
+            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
       - run: echo "nuget package发布到GitHub已完成"
       - run: echo "正在发布nuget package到Nuget"
       - name: 发布到NuGet
