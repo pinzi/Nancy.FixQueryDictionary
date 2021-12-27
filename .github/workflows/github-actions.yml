@@ -15,3 +15,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 此作业的状态为${job.status}"
+      - name: 安装nuget 
+        uses: nuget/setup-nuget@v1
+        with:        
+            nuget-version: '5.x'
+      - name: 发布生成包到github和nuget
+        run: |
+            nuget push ./Nancy.FixQueryDictionary/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{secrets.nuget_ApiKey}} -NoSymbol
+            nuget push ./Nancy.FixQueryDictionary/bin/Release/*.nupkg -Source github -SkipDuplicate
