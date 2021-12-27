@@ -14,7 +14,6 @@ jobs:
       - name: 签出存储库代码
         uses: actions/checkout@v2
       - run: echo "${{github.repository}}存储库已克隆到运行程序"
-      - run: echo "工作流现在可以在运行程序上测试代码了"
       - name: 列出存储库中的文件
         run: |
           ls ${{ github.workspace }}
@@ -45,5 +44,4 @@ jobs:
           VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
           # nuget package 发布apikey
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-      - run: echo "发布nuget package到Nuget已完成"
       - run: echo "此作业的状态为${{job.status}}"
