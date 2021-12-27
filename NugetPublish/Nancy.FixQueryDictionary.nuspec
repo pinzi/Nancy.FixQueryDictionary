@@ -23,9 +23,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="Release\lib\Nancy.FixQueryDictionary.dll" target="Release\lib\Nancy.FixQueryDictionary.dll" />
-    <file src="Release\lib\Nancy.FixQueryDictionary.pdb" target="Release\lib\Nancy.FixQueryDictionary.pdb" />
-    <file src="Release\lib\Nancy.FixQueryDictionary.xml" target="Release\lib\Nancy.FixQueryDictionary.xml" />
-    <file src="Release\README.md" target="Release\README.md" />
+    <file src="Release\lib\Nancy.FixQueryDictionary.dll" target="lib\Nancy.FixQueryDictionary.dll" />
+    <file src="Release\lib\Nancy.FixQueryDictionary.pdb" target="lib\Nancy.FixQueryDictionary.pdb" />
+    <file src="Release\lib\Nancy.FixQueryDictionary.xml" target="lib\Nancy.FixQueryDictionary.xml" />
+    <file src="Release\README.md" target="README.md" />
   </files>
 </package>
