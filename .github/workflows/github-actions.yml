@@ -13,15 +13,14 @@ jobs:
       - run: echo "🖥️ 工作流现在可以在运行程序上测试代码了"
       - name: 列出存储库中的文件
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 此作业的状态为${{job.status}}"
+          ls ${{ github.workspace }}      
       - name: 安装nuget 
         uses: nuget/setup-nuget@v1
         with:        
             nuget-version: '5.x'
       - name: 打包nuget package
         run: |
-             nuget pack ./NugetPublish/Release/Nancy.FixQueryDictionary.nuspec            
+             nuget pack NugetPublish/Release/Nancy.FixQueryDictionary.nuspec            
       - name: 发布到github
         run: |
             nuget push ./NugetPublish/Release/*.nupkg -Source github -SkipDuplicate
@@ -30,6 +29,6 @@ jobs:
         with:
           # nuget package 名称
           PACKAGE_NAME: Nancy.FixQueryDictionary
-          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
           # nuget package 发布apikey
           NUGET_KEY: ${{secrets.nuget_ApiKey}}
+      - run: echo "🍏 此作业的状态为${{job.status}}"
