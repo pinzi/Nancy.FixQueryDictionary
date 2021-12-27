@@ -32,7 +32,7 @@ jobs:
             dotnet nuget add source --username pinzi --password ${{ secrets.nuget_ApiKey }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/OWNER/index.json"
       - name: 发布到github
         run: |
-            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{secrets.nuget_ApiKey}} --source "github"
+            dotnet nuget push NugetPublish/Release/*.nupkg  --api-key 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 --source "github"
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
