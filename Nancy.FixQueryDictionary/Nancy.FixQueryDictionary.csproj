@@ -73,6 +73,7 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Nancy.FixQueryDictionary.nuspec" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,4 +90,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Nancy.FixQueryDictionary\bin\Release\Nancy.FixQueryDictionary.dll" "$(SolutionDir)\NugetPublish\Release\lib\Nancy.FixQueryDictionary.dll"
+copy "$(SolutionDir)Nancy.FixQueryDictionary\bin\Release\Nancy.FixQueryDictionary.xml" "$(SolutionDir)\NugetPublish\Release\lib\Nancy.FixQueryDictionary.xml"
+copy "$(SolutionDir)Nancy.FixQueryDictionary\bin\Release\Nancy.FixQueryDictionary.pdb" "$(SolutionDir)\NugetPublish\Release\lib\Nancy.FixQueryDictionary.pdb"
+copy "$(SolutionDir)Nancy.FixQueryDictionary\bin\Release\readme.md" "$(SolutionDir)\NugetPublish\Release\readme.md"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

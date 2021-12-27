@@ -15,6 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{314017CC-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.FixQueryDictionaryTest", "Nancy.FixQueryDictionaryTest\Nancy.FixQueryDictionaryTest.csproj", "{4E6B41BC-A6AB-425B-A4FA-2AEA9922271A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E0E26B8-F12D-4F17-899C-84AD8A83D194}"
+	ProjectSection(SolutionItems) = preProject
+		NugetPublish\Release\Nancy.FixQueryDictionary.nuspec = NugetPublish\Release\Nancy.FixQueryDictionary.nuspec
+		NugetPublish\Nancy.FixQueryDictionary.xml = NugetPublish\Nancy.FixQueryDictionary.xml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
