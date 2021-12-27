@@ -26,6 +26,6 @@
     <file src="Release\lib\Nancy.FixQueryDictionary.dll" target="Release\lib\Nancy.FixQueryDictionary.dll" />
     <file src="Release\lib\Nancy.FixQueryDictionary.pdb" target="Release\lib\Nancy.FixQueryDictionary.pdb" />
     <file src="Release\lib\Nancy.FixQueryDictionary.xml" target="Release\lib\Nancy.FixQueryDictionary.xml" />
-    <file src="Release\readme.md" target="readme.md" />
+    <file src="readme.md" target="readme.md" />
   </files>
 </package>
