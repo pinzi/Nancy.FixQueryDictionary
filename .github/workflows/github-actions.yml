@@ -1,17 +1,25 @@
-name: GitHub Actions Demo
+name: GitHub Actions
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
+      - run: echo "🎉 该作业由${{github.event_name}}事件自动触发"
+      - run: echo "🐧 此作业现在正在GitHub托管的${{runner.os}}服务器上运行"
+      - run: echo "🔎 分支的名称是${{github.ref}}，存储库是${{github.repository}}"
+      - name: 签出存储库代码
         uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - run: echo "💡 ${{github.repository}}存储库已克隆到运行程序"
+      - run: echo "🖥️ 工作流现在可以在运行程序上测试代码了"
+      - name: 列出存储库中的文件
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 此作业的状态为${{job.status}}"
+      - name: 安装nuget 
+        uses: nuget/setup-nuget@v1
+        with:        
+            nuget-version: '5.x'
+      - name: 发布生成包到github和nuget
+        run: |
+            nuget push ./bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{secrets.nuget_ApiKey}} -NoSymbol
+            nuget push ./bin/Release/*.nupkg -Source github -SkipDuplicate
