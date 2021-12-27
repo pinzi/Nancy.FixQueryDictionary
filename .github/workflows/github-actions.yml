@@ -21,5 +21,5 @@ jobs:
             nuget-version: '5.x'
       - name: 发布生成包到github和nuget
         run: |
-            nuget push ./bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{secrets.nuget_ApiKey}} -NoSymbol
-            nuget push ./bin/Release/*.nupkg -Source github -SkipDuplicate
+            nuget push ./NugetPublish/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{secrets.nuget_ApiKey}} -NoSymbol
+            nuget push ./NugetPublish/Release/*.nupkg -Source github -SkipDuplicate
