@@ -36,6 +36,8 @@ jobs:
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
+          # 打包文件路径
+          PROJECT_FILE_PATH: NugetPublish/Release/Nancy.FixQueryDictionary.nuspec
           # nuget package 名称
           PACKAGE_NAME: Nancy.FixQueryDictionary
           # nuget package 发布apikey
