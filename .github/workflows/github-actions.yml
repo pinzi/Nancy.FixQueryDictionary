@@ -29,7 +29,7 @@ jobs:
             dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
       - name: 发布到github
         run: |
-            dotnet nuget push "NugetPublish/Release/Nancy.FixQueryDictionary.1.1.0.nupkg"  --api-key ${{secrets.nuget_ApiKey}} --source "github"
+            dotnet nuget push "NugetPublish/Release/Nancy.FixQueryDictionary.nupkg"  --api-key ${{secrets.nuget_ApiKey}} --source "github"
       - name: 发布到NuGet
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
