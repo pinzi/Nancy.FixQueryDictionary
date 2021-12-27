@@ -45,5 +45,5 @@ jobs:
         #  # nuget package 发布apikey
         #  NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         run: |
-             dotnet nuget push NugetPublish/Release/Nancy.FixQueryDictionary.1.1.1.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+             dotnet nuget push NugetPublish/Release/Nancy.FixQueryDictionary.1.1.2.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
       - run: echo "此作业的状态为${{job.status}}"

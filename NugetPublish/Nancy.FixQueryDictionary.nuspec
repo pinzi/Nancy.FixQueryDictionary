@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Nancy.FixQueryDictionary</id>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <title>Nancy Http请求参数字典解析错误修复扩展方法</title>
     <authors>pinzi</authors>
     <owners>pinzi</owners>
@@ -12,7 +12,7 @@
     <projectUrl>https://www.nuget.org/packages/Nancy.FixQueryDictionary/</projectUrl>
     <iconUrl>https://s2.loli.net/2021/12/09/KM6QGYxoAj1R2UJ.png</iconUrl>
     <description>一个用来修复Nancy Http请求参数绑定时空参数绑定出错的nuget包</description>
-    <releaseNotes>第12次发布，测试GitHub自动构建自动发布（CICD）</releaseNotes>
+    <releaseNotes>第13次发布，测试GitHub持续集成持续交付部署（CICD）</releaseNotes>
     <copyright>Copyright 2021</copyright>
     <language>zh-Hans-CN</language>
     <tags>Nancy</tags>
