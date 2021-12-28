@@ -1,9 +1,9 @@
 name: GitHub Actions
 on:
   push:
-    branches: [ master ]
+    branches: [ publish ]
   pull_request:
-    branches: [ master ]
+    branches: [ publish ]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -20,30 +20,20 @@ jobs:
       - name: 列出Release发布的文件
         run: |
           ls NugetPublish/Release
-      - name: 安装nuget 
+      - name: 安装nuget工具
         uses: nuget/setup-nuget@v1
         with:        
             nuget-version: '5.x'
-      - name: 打包nuget package
+      - name: 打包生成nuget package
         run: |
              nuget pack NugetPublish/Nancy.FixQueryDictionary.nuspec -OutputDirectory NugetPublish/Release/
-      - name: 添加Github源
+      - name: 添加GitHub源
         run: |
             dotnet nuget add source --name github "https://nuget.pkg.github.com/OWNER/index.json"
       - name: 发布到Github
         run: |
             dotnet nuget push NugetPublish/Release/*.nupkg  --api-key ${{ secrets.GITHUB_TOKEN }} --source "github" --skip-duplicate
       - name: 发布到NuGet
-        #uses: brandedoutcast/publish-nuget@v2.5.5
-        #with:
-        #  # 打包文件路径
-        #  PROJECT_FILE_PATH: NugetPublish/Nancy.FixQueryDictionary.nuspec
-        #  # nuget package 名称
-        #  PACKAGE_NAME: Nancy.FixQueryDictionary
-        #  # 匹配nuget package版本号正则表达式
-        #  VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
-        #  # nuget package 发布apikey
-        #  NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         run: |
              dotnet nuget push NugetPublish/Release/Nancy.FixQueryDictionary.1.1.2.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json --skip-duplicate
       - run: echo "此作业的状态为${{job.status}}"
