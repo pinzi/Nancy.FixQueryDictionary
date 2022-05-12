@@ -1,6 +1,6 @@
 # Nancy.FixQueryDictionary
 #### 简介
-一个用来修复Nancy Http请求参数绑定时空参数绑定出错的nuget包
+一个用来修复
 #### 使用方法
 1.安装Nancy.FixQueryDictionary
 ```
