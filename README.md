@@ -7,9 +7,9 @@
 
 [![Github Build Status](https://github.com/pinzi/Nancy.FixQueryDictionary/workflows/dotnetcore/badge.svg?branch=publish)](https://github.com/pinzi/Nancy.FixQueryDictionary/actions)
 
-[![languages]](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary.svg)
+![languages](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary.svg)
 
-[![license]](https://img.shields.io/badge/license-MIT-blue.svg)
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 #### 简介
