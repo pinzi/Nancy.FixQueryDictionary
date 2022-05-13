@@ -9,7 +9,7 @@
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=social)
+![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=plastic)
 
 ![release](https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
 
