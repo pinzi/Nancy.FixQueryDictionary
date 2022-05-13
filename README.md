@@ -10,7 +10,10 @@
 ![languages](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary.svg)
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=social)
+
+(https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
 
 #### 简介
 一个用来修复Nancy Http请求空参数绑定出错的nuget包
