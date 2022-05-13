@@ -5,7 +5,7 @@
 
 [![Nancy.FixQueryDictionary Latest](https://img.shields.io/nuget/vpre/WeihanLi.Common)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/absoluteLatest)
 
-[![Github Build Status](https://github.com/pinzi/Nancy.FixQueryDictionary/workflows/dotnetcore/badge.svg?branch=publish)](https://github.com/pinzi/Nancy.FixQueryDictionary/actions)
+[![Github Build Status](https://img.shields.io/cirrus/github/pinzi/Nancy.FixQueryDictionary/publish?style=plastic)]
 
 ![languages](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary.svg)
 
@@ -13,7 +13,7 @@
 
 ![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=social)
 
-(https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
+![release](https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
 
 #### 简介
 一个用来修复Nancy Http请求空参数绑定出错的nuget包
