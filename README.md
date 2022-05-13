@@ -1,4 +1,12 @@
 # Nancy.FixQueryDictionary
+#### Build status
+
+[![Nancy.FixQueryDictionary Latest Stable](https://img.shields.io/nuget/v/Nancy.FixQueryDictionary.svg)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/)
+
+[![Nancy.FixQueryDictionary Latest](https://img.shields.io/nuget/vpre/WeihanLi.Common)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/absoluteLatest)
+
+[![Github Build Status](https://github.com/pinzi/Nancy.FixQueryDictionary/workflows/dotnetcore/badge.svg?branch=dev)](https://github.com/pinzi/Nancy.FixQueryDictionary/actions?query=workflow%3Adotnetcore+branch%3Adev)
+
 #### 简介
 一个用来修复Nancy Http请求空参数绑定出错的nuget包
 #### 使用方法
