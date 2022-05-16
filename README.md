@@ -1,7 +1,6 @@
 # Nancy.FixQueryDictionary
 #### Build status
 
-[![Nancy.FixQueryDictionary Latest Stable](https://img.shields.io/nuget/v/Nancy.FixQueryDictionary.svg)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/)
 ![Github Build Status](https://img.shields.io/cirrus/github/pinzi/Nancy.FixQueryDictionary/publish?style=plastic)
 ![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=plastic)
 ![release](https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
