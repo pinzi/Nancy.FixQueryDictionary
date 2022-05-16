@@ -1,20 +1,10 @@
 # Nancy.FixQueryDictionary
 #### Build status
 
-[![Nancy.FixQueryDictionary Latest Stable](https://img.shields.io/nuget/v/Nancy.FixQueryDictionary.svg)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/)
-
+![![Nancy.FixQueryDictionary Latest Stable](https://img.shields.io/nuget/v/Nancy.FixQueryDictionary.svg)](https://www.nuget.org/packages/Nancy.FixQueryDictionary/)
 ![Github Build Status](https://img.shields.io/cirrus/github/pinzi/Nancy.FixQueryDictionary/publish?style=plastic)
-
-![languages](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary.svg)
-
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-
 ![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=plastic)
-
 ![release](https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
-
-
-
 ![GitHub top language](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary?logo=github)
 ![GitHub License](https://img.shields.io/github/license/pinzi/Nancy.FixQueryDictionary?logo=github)
 ![Nuget Downloads](https://img.shields.io/nuget/dt/Nancy.FixQueryDictionary?logo=nuget)
