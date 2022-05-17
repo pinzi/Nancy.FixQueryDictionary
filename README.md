@@ -1,7 +1,7 @@
 # Nancy.FixQueryDictionary
 #### Build status
 
-![Github Build Status](https://img.shields.io/cirrus/github/pinzi/Nancy.FixQueryDictionary/publish?style=plastic)
+![Github Build Status](https://img.shields.io/appveyor/build/pinzi/Nancy.FixQueryDictionary/publish?style=plastic)
 ![stars](https://img.shields.io/github/stars/pinzi/Nancy.FixQueryDictionary.svg?style=plastic)
 ![release](https://img.shields.io/github/v/release/pinzi/Nancy.FixQueryDictionary?include_prereleases)
 ![GitHub top language](https://img.shields.io/github/languages/top/pinzi/Nancy.FixQueryDictionary?logo=github)
