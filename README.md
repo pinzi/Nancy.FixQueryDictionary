@@ -10,6 +10,11 @@
 ![Nuget](https://img.shields.io/nuget/v/Nancy.FixQueryDictionary?logo=nuget)
 ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Nancy.FixQueryDictionary?label=dev%20nuget&logo=nuget)
 
+## Packages
+
+与这个 Repository 相关的 nuget 包：
+
+- ![Nuget Downloads](https://img.shields.io/nuget/dt/Nancy.FixQueryDictionary?logo=nuget) [Nancy.FixQueryDictionary](https://www.nuget.org/packages/Nancy.FixQueryDictionary)
 
 #### 简介
 一个用来修复Nancy Http请求空参数绑定出错的nuget包
